@@ -32,10 +32,17 @@ function Countdown({ onFinish }: { onFinish: () => void }) {
       <AnimatePresence mode="wait">
         <motion.h1
           key={index}
-          className={`${customFont.className} text-[64px] md:text-[96px] tracking-widest`}
-          initial={{ opacity: 0, scale: 0.2, filter: "blur(12px)" }}
+          className={`
+    ${customFont.className}
+    text-[28px] sm:text-[40px] md:text-[72px] lg:text-[96px]
+    tracking-widest sm:tracking-[0.2em]
+    max-w-[90vw]
+    text-center
+    wrap-break-word
+  `}
+          initial={{ opacity: 0, scale: 0.3, filter: "blur(6px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          exit={{ opacity: 0, scale: 1.4, filter: "blur(8px)" }}
+          exit={{ opacity: 0, scale: 1.3, filter: "blur(6px)" }}
           transition={{
             duration: 0.45,
             ease: [0.34, 1.56, 0.64, 1],
