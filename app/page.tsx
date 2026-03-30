@@ -9,6 +9,7 @@ import BirthdayCard from "./components/BirthdayCard";
 import BlessingCard from "./components/BlessingCard";
 import HeartShapedImage from "./components/HeartShapedImage";
 import AudioPlayer from "./components/AudioPlayer";
+import Loading from "./components/Loading";
 
 export default function Home() {
   const [showMain, setShowMain] = useState(false);
@@ -17,6 +18,15 @@ export default function Home() {
   const [showHeart, setShowHeart] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 sec intro
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const tracks = {
     main: "/audio/hepibesdey.mp3",
@@ -80,6 +90,10 @@ export default function Home() {
       setShowBlessing(true);
     }
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="fixed inset-0 overflow-hidden">
