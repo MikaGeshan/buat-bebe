@@ -219,7 +219,7 @@ export default function Home() {
             <GalaxyBackground />
 
             <div className="relative flex items-center justify-center w-full h-full max-w-105 sm:max-w-130 md:max-w-160">
-              <div className="w-full aspect-square flex items-center justify-center">
+              <div className="scale-[0.8] sm:scale-90 md:scale-100">
                 <HeartShapedImage />
               </div>
             </div>

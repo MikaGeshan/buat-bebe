@@ -13,7 +13,8 @@ import S6 from "@/public/images/S6.jpeg";
 
 const images = [S1, S2, S3, S4, S5, S6];
 
-const CELL = 56;
+const CELL =
+  typeof window !== "undefined" ? Math.min(window.innerWidth / 12, 56) : 56;
 const COLS = 13;
 const ROWS = 13;
 
