@@ -211,14 +211,17 @@ export default function Home() {
         {showHeart && (
           <motion.div
             key="heart"
-            className="absolute inset-0 z-30 flex items-center justify-center bg-black px-4"
+            className="absolute inset-0 z-30 flex items-center justify-center bg-black px-4 sm:px-6 md:px-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
             <GalaxyBackground />
-            <div className="relative flex items-center justify-center w-full h-full">
-              <HeartShapedImage />
+
+            <div className="relative flex items-center justify-center w-full h-full max-w-105 sm:max-w-130 md:max-w-160">
+              <div className="w-full aspect-square flex items-center justify-center">
+                <HeartShapedImage />
+              </div>
             </div>
           </motion.div>
         )}
